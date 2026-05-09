@@ -31,6 +31,7 @@ details[open] {
     align-items: center;
     gap: 0.5rem;
     border-radius: 0.5rem;
+    min-height: 32px;
 }
 
 .date-list {

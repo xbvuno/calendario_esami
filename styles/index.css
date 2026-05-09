@@ -1,0 +1,76 @@
+/* @import './css/pico.jade.min.css' */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --color-border: black;
+  --color-text: black;
+  --color-bg: white;
+
+  font-family: 'Inter', monospace;
+}
+
+@media print {
+  header {
+    display: none !important;
+  }
+
+  aside {
+    display: none !important;
+  }
+
+  body,
+  html,
+  #root {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .layout {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  main {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none;
+  }
+
+  .calendar-app {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none;
+  }
+
+  .board {
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .months-container {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+
+  .calendar-panel {
+    page-break-after: always;
+    page-break-inside: avoid;
+    break-after: page;
+    break-inside: avoid;
+    height: 100vh;
+    margin: 0 !important;
+    padding: 0.5cm !important;
+    border: none !important;
+  }
+
+  .calendar-grid {
+    page-break-inside: avoid;
+  }
+}

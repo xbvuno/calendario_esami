@@ -1,0 +1,26 @@
+/* Calendar Styles */
+.calendar-app {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0;
+  background: var(--color-background);
+}
+
+.empty-calendar {
+  padding: 2rem;
+  text-align: center;
+  color: var(--color-text-secondary, #999);
+  font-size: 1.1rem;
+}
+
+/* Board / Container */
+.board {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.months-container {
+  display: grid;
+}

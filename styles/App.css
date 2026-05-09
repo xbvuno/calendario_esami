@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+#root>header {
+  display: flex;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+#root>header h2 {
+  flex: 1;
+}
+
+button {
+  padding: 0.3rem 1rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 600;
+  background: var(--button-base-background-color, #111111);
+  color: var(--button-base-color, white);
+  border: 1px solid var(--button-border-color, #000000);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+button:hover {
+  background: var(--button-hover-background-color, #292929);
+  border: 1px solid var(--button-border-color, #000000);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#root>.layout {
+  flex: 1;
+  display: flex;
+
+  min-height: 0;
+}
+
+#root>.layout>aside {
+  min-width: 20%;
+  max-width: 40%;
+
+  border-right: 1px solid var(--color-border);
+
+  resize: horizontal;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 0;
+}
+
+#root>.layout>main {
+  flex: 1;
+
+  padding: 0.5rem;
+
+  overflow: auto;
+  min-height: 0;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.5rem;
+  padding: 0.5rem;
+}
+
+section>button {
+  width: 100%;
+}
+
+.select-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.select-wrap>select {
+  width: 100%;
+}
+
+button:has(.lucide) {
+  padding: 0.3rem;
+  width: min-content;
+}
+
+button:has(.lucide):has(span) {
+  display: flex;
+  width: 100%;
+  gap:0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+button:has(.lucide):has(span).min {
+  width: min-content;
+  padding: 0.3rem 1rem;
+}
+
+
+button>.lucide {
+  display: flex;
+}
+
+#root>header>h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+
+#root>header>h2>p {
+  height: 24px;
+  line-height: 26px;
+}
+
+section:has(.corsi-list) {
+  height: 100%;
+}
+

@@ -1,0 +1,196 @@
+/* Calendar Panel (Month) */
+.calendar-panel {
+  background: var(--color-background);
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+}
+
+.calendar-header {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.month-title {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Weekdays */
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary, #666);
+  text-transform: uppercase;
+}
+
+.weekdays span {
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  grid-auto-rows: minmax(100px, 1fr);
+}
+
+/* Day Cell */
+.day-cell {
+  background: rgb(240, 240, 240);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+  transition: all 0.2s ease;
+}
+
+.day-cell--empty {
+--color: rgba(0, 0, 0, 0.336);
+  background: transparent;
+  border: 1px dashed var(--color);
+  color: var(--color);
+}
+
+.day-cell--has-exams {
+  background: var(--color-background);
+}
+
+.day-cell--today {
+  border: 2px solid var(--button-base-background-color, #004e89);
+  box-shadow: 0 0 0 1px rgba(0, 78, 137, 0.1) inset;
+}
+
+.day-cell--today .day-number {
+  color: var(--button-base-background-color, #004e89);
+  font-weight: 700;
+}
+
+/* Day Head */
+.day-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day-number {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Day Exams List */
+.day-exams {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.day-exams::-webkit-scrollbar {
+  width: 4px;
+}
+
+.day-exams::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.day-exams::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+}
+
+.day-exam {
+  display: flex;
+  gap: 0.3rem;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.day-empty-text {
+  color: var(--color-text-secondary, #ccc);
+  font-size: 0.9rem;
+  margin: auto 0;
+}
+
+.day-exam-course {
+  --color-text: black;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-left: 3px solid var(--color-text);
+  padding-left: 0.4rem;
+  color: var(--color-text);
+  text-transform: uppercase;
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  line-height: 1.2;
+}
+
+/* Print Styles */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0.5cm;
+  }
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #root,
+  .calendar-app {
+    height: 100%;
+    width: 100%;
+  }
+
+  .layout {
+    display: none;
+  }
+
+  .calendar-hero {
+    display: none !important;
+  }
+
+  .calendar-panel {
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 1rem;
+    page-break-after: always;
+  }
+
+  .calendar-grid {
+    flex: 1;
+    min-height: 0;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-auto-rows: minmax(0, 1fr);
+  }
+
+  .day-cell {
+    min-height: 0 !important;
+  }
+
+  .day-exam-course {
+    font-size: 0.7rem;
+  }
+}

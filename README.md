@@ -1,18 +1,60 @@
-# React + Vite
+# Calendario Esami: Pianifica Sessioni e Date in Modo Semplice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="./public/banner.png" alt="Calendario Esami preview" width="100%" />
 
-Currently, two official plugins are available:
+Applicazione web leggera per organizzare corsi e date d'esame partendo da file CSV oppure da una configurazione creata manualmente.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Input e Configurazione
+- Import CSV con formato Corso;Data
+- Creazione configurazione da zero anche senza CSV
+- Gestione di piu file/configurazioni con selettore dedicato
+- Persistenza locale automatica via localStorage
 
-Note: This will impact Vite dev & build performances.
+### Gestione Corsi
+- Aggiunta nuovo corso con nome progressivo automatico
+- Aggiunta rapida di una data iniziale al nuovo corso
+- Rimozione corso
+- Reset singolo corso o reset intero file
+- Personalizzazione colore per corso
 
-## Expanding the ESLint configuration
+### Gestione Date
+- Modifica date tramite input calendario
+- Rimozione date singole
+- Ordinamento automatico cronologico
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Visualizzazione Calendario
+- Raggruppamento esami per mese
+- Evidenziazione visiva per materia/colore
+- Stato vuoto guidato quando non ci sono esami
+
+### Export
+- Export CSV con nome personalizzabile
+- Export PDF tramite stampa browser
+
+---
+
+## Tech Stack
+
+- [React](https://react.dev/) + [Vite](https://vitejs.dev/)
+- [Zustand](https://zustand-demo.pmnd.rs/) per state management
+- [Lucide React](https://lucide.dev/) per icone UI
+- CSS modulare per componenti e layout
+
+---
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Per la build di produzione:
+
+```bash
+npm run build
+```
